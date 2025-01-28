@@ -1,0 +1,656 @@
+@import "structure.css";
+
+.metismenu {
+  margin: 0;
+}
+
+.metismenu li {
+  position: relative;
+}
+
+.metismenu .mm-collapse {
+  display: none;
+}
+
+.metismenu .mm-collapse:not(.mm-show) {
+  display: none;
+}
+
+.metismenu .mm-collapse.mm-show {
+  display: block;
+  height: fit-content !important;
+}
+
+.metismenu .mm-collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+}
+
+.metismenu .has-arrow:after {
+  width: 0.5rem;
+  height: 0.5rem;
+  right: 1.875rem;
+  top: 48%;
+  border-color: inherit;
+  -webkit-transform: rotate(-225deg) translateY(-50%);
+  transform: rotate(-225deg) translateY(-50%);
+  position: absolute;
+  content: "";
+  border-width: 1px 0 0 1px;
+  border-style: solid;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  transition: all 0.3s ease-out;
+}
+
+[dir="rtl"] .metismenu .has-arrow::after {
+  right: auto;
+  left: 1em;
+  -webkit-transform: rotate(135deg) translateY(-50%);
+  transform: rotate(135deg) translateY(-50%);
+}
+
+.metismenu .has-arrow[aria-expanded="true"]:after,
+.metismenu .mm-active>.has-arrow:after {
+  -webkit-transform: rotate(-135deg) translateY(-50%);
+  transform: rotate(-135deg) translateY(-50%);
+}
+
+[dir="rtl"] .metismenu .has-arrow[aria-expanded="true"]:after,
+[dir="rtl"] .metismenu .mm-active>.has-arrow:after {
+  -webkit-transform: rotate(225deg) translateY(-50%);
+  transform: rotate(225deg) translateY(-50%);
+}
+
+#sidebar-menu ul li a {
+  width: 100%;
+  padding: 0 24px 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  height: 48px;
+  color: var(--bs-neutral-600);
+  font-size: 16px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+}
+
+#sidebar-menu ul li a:hover {
+  background-color: var(--bs-primary-50);
+  color: var(--bs-primary-500) !important;
+}
+
+.vertical-menu .mm-active .active {
+  color: var(--bs-primary-500) !important;
+  background-color: var(--bs-primary-50);
+}
+
+#sidebar-menu ul li a.active::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  background: var(--bs-primary-500);
+  left: 0;
+  top: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+#sidebar-menu ul li ul.sub-menu {
+  padding: 0;
+}
+
+#sidebar-menu ul li ul.sub-menu li a {
+  background-color: transparent;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+#sidebar-menu ul li ul.sub-menu li a:hover {
+  color: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li ul.sub-menu li a.active::after {
+  display: none;
+}
+
+#sidebar-menu ul li ul.sub-menu li ul.sub-menu {
+  padding: 0;
+}
+
+#sidebar-menu ul li ul.sub-menu li ul.sub-menu li a {
+  padding: 0.4rem 1.5rem 0.4rem 4.5rem;
+  font-size: 13.5px;
+  padding-left: 17% !important;
+}
+
+#sidebar-menu ul li ul.sub-menu li ul.sub-menu li ul.sub-menu li a {
+  padding: 0.4rem 1.5rem 0.4rem 4.5rem;
+  font-size: 13.5px;
+  padding-left: 27% !important;
+}
+
+.menu-title {
+  padding: 12px 20px !important;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--bs-neutral-400);
+  font-weight: 400;
+}
+
+.vertical-collpsed .vertical-menu .simplebar-content-wrapper,
+.vertical-collpsed .vertical-menu .simplebar-mask {
+  overflow: visible !important;
+}
+
+.vertical-collpsed .vertical-menu .simplebar-scrollbar {
+  display: none !important;
+}
+
+.vertical-collpsed .vertical-menu .simplebar-offset {
+  bottom: 0 !important;
+}
+
+.vertical-collpsed .vertical-menu .metismenu .badge,
+.vertical-collpsed .vertical-menu .metismenu .collapse.in,
+.vertical-collpsed .vertical-menu .metismenu .menu-title {
+  display: none !important;
+}
+
+.vertical-collpsed .vertical-menu .metismenu .nav.collapse {
+  height: inherit !important;
+}
+
+.vertical-collpsed .vertical-menu .metismenu .has-arrow:after {
+  display: none;
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li>a {
+  padding: 15px 20px;
+  min-height: 55px;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li>a:active,
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li>a:focus,
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li>a:hover {
+  color: var(--bs-neutral-500);
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li>a span {
+  display: none;
+  padding-left: 25px;
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>a {
+  position: relative;
+  width: calc(190px + 70px);
+  color: var(--bs-primary-500);
+  background: var(--bs-primary-50);
+  -webkit-transition: none;
+  transition: none;
+  border-radius: 0 4px;
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>a span {
+  display: inline;
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>ul {
+  display: block;
+  left: 70px;
+  position: absolute;
+  width: 190px;
+  height: auto !important;
+  -webkit-box-shadow: 3px 5px 10px 0 rgba(54, 61, 71, 0.1);
+  box-shadow: 3px 5px 10px 0 rgba(54, 61, 71, 0.1);
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>ul ul {
+  -webkit-box-shadow: 3px 5px 10px 0 rgba(54, 61, 71, 0.1);
+  box-shadow: 3px 5px 10px 0 rgba(54, 61, 71, 0.1);
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>ul a {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 8px 20px;
+  position: relative;
+  width: 190px;
+  z-index: 6;
+  color: var(--bs-neutral-500);
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>ul a:hover {
+  color: var(--bs-neutral-500);
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul ul {
+  padding: 5px 0;
+  z-index: 9999;
+  display: none;
+  background-color: var(--bs-neutral-100);
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul ul li:hover>ul {
+  display: block;
+  left: 190px;
+  height: auto !important;
+  margin-top: -36px;
+  position: absolute;
+  width: 190px;
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu>ul ul li.active a {
+  color: var(--bs-neutral-500);
+}
+
+.vertical-collpsed .vertical-menu #sidebar-menu ul li.mm-active .active {
+  color: var(--bs-primary-500) !important;
+}
+
+.mm-active {
+  color: var(--bs-neutral-500) !important;
+}
+
+.mm-active>a {
+  color: var(--bs-primary-500) !important;
+  background: var(--bs-primary-50);
+}
+
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.simplebar-content-wrapper::-webkit-scrollbar {
+  width: 0;
+}
+
+.simplebar-placeholder {
+  width: 100%;
+  height: calc(100vh - 148px);
+}
+
+.vertical-collpsed #sidebar-menu ul li ul.sub-menu {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 130px;
+  max-height: 230px;
+}
+
+[data-simplebar] {
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.simplebar-content-wrapper {
+  direction: inherit;
+  -webkit-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+  position: relative;
+  display: block;
+  height: 100%;
+  width: auto;
+  visibility: visible;
+  overflow: auto;
+  max-width: 100%;
+  max-height: 100%;
+  scrollbar-width: none;
+  padding: 0 !important;
+}
+
+.simplebar-height-auto-observer-wrapper {
+  -webkit-box-sizing: inherit !important;
+  box-sizing: inherit !important;
+  height: 100%;
+  width: 100%;
+  max-width: 1px;
+  position: relative;
+  float: left;
+  max-height: 1px;
+  overflow: hidden;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  -webkit-box-flex: inherit;
+  -ms-flex-positive: inherit;
+  flex-grow: inherit;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.simplebar-height-auto-observer {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000%;
+  width: 1000%;
+  min-height: 1px;
+  min-width: 1px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.simplebar-offset {
+  direction: inherit !important;
+  -webkit-box-sizing: inherit !important;
+  box-sizing: inherit !important;
+  resize: none !important;
+  position: absolute;
+  top: 0;
+  left: 0 !important;
+  bottom: 0;
+  right: 0 !important;
+  padding: 0;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.simplebar-track {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.simplebar-scrollbar {
+  position: absolute;
+  right: 2px;
+  width: 4px;
+  min-height: 10px;
+}
+
+.simplebar-scrollbar:before {
+  position: absolute;
+  content: "";
+  background: #a2adb7;
+  border-radius: 7px;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+  opacity: 0.5;
+  -webkit-transition: opacity 0s linear;
+  transition: opacity 0s linear;
+}
+
+.simplebar-track.simplebar-vertical {
+  top: 0;
+  width: 11px;
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 2px;
+  bottom: 2px;
+}
+
+.simplebar-track.simplebar-horizontal {
+  left: 0;
+  height: 11px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+  height: 100%;
+  left: 2px;
+  right: 2px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  right: auto;
+  left: 0;
+  top: 2px;
+  height: 7px;
+  min-height: 0;
+  min-width: 10px;
+  width: auto;
+}
+
+/* side bar menu icon css */
+
+#sidebar-menu ul li a:hover svg .dashboard {
+  stroke: var(--bs-primary-500);
+}
+
+.mm-active .active svg .dashboard {
+  stroke: var(--bs-primary-500) !important;
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .dashboard {
+  stroke: var(--bs-primary-500);
+}
+
+/* #sidebar-menu ul li a:hover svg .supplier {
+  stroke: var(--bs-primary-500);
+}
+
+.mm-active .active svg .supplier {
+  stroke: var(--bs-primary-500) !important;
+}
+
+
+
+#sidebar-menu ul li a:hover svg .products {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .products {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .products {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li a:hover svg .purchase {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .purchase {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .purchase {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li a:hover svg .sales {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .sales {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .sales {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li a:hover svg .admin {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .admin {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .admin {
+  stroke: var(--bs-primary-500);
+} */
+#sidebar-menu ul li a:hover svg .admin {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .admin {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .admin {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li ul.sub-menu {
+  padding: 0;
+  padding-left: 32px;
+}
+
+#sidebar-menu ul li a:hover svg .products {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .products {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .products {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li a:hover svg .marchant {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .marchant {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .marchant {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li a:hover svg .prime_views {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .prime_views {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .prime_views {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li a:hover svg .prime_products {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .prime_products {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .prime_products {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li a:hover svg .slider {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .slider {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .slider {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li a:hover svg .customer {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .customer {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .customer {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li a:hover svg .reason {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul .mm-active a svg .reason {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .reason {
+  stroke: var(--bs-primary-500);
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .location {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li a:hover svg .location {
+  stroke: var(--bs-primary-500);
+}
+
+.mm-active .active svg .location {
+  stroke: var(--bs-primary-500) !important;
+}
+
+.vertical-collpsed #sidebar-menu>ul>li:hover>a svg .setting {
+  stroke: var(--bs-primary-500);
+}
+
+#sidebar-menu ul li a:hover svg .setting {
+  stroke: var(--bs-primary-500);
+}
+
+.mm-active .active svg .setting {
+  stroke: var(--bs-primary-500) !important;
+}
+
+/* side bar menu icon css */
